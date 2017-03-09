@@ -21,6 +21,13 @@ RECT_HEIGHT = 40
 RECT_WIDTH = 160
 DIAM_HEIGHT = 40
 DIAM_WIDTH = 160
+SQUIG_HEIGHT = 40
+SQUIG_WIDTH = 160
+SQUIGGLE_PATH = "M2155 1118 c-16 -6 -73 -38 -125 -71 -187 -119 -328 -163 -490 -154 \
+-117 7 -174 22 -354 93 -453 180 -761 163 -966 -53 -75 -78 -147 -210 -175 \
+-318 -70 -266 25 -556 194 -594 58 -13 107 3 223 71 101 59 114 65 203 101 95 \
+39 162 50 276 45 86 -3 116 -9 169 -32 206 -89 333 -117 525 -117 144 0 198 8 \
+312 46 259 87 449 349 469 645 9 143 -42 283 -121 332 -33 20 -93 22 -140 6z"
 
 var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 svg.setAttribute('width', 500)
@@ -59,10 +66,19 @@ function drawDiam(cx, cy, w, h) {
   svg.appendChild(diam)
 }
 
+function drawSquiggle(w, h) {
+  var squiggle = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  squiggle.setAttribute('transform', 'scale('+0.09+','+0.09+')')
+  squiggle.setAttribute('height', h)
+  squiggle.setAttribute('d', SQUIGGLE_PATH)
+  squiggle.setAttribute('fill', 'rgb(0,0,255)')
+  svg.appendChild(squiggle)
+}
+
 
 drawRectWithCenter(200, 70)
 drawDiamWithCenter(200, 140)
-
+drawSquiggle(SQUIG_WIDTH, SQUIG_HEIGHT)
 
 
 
