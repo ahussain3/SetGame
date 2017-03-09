@@ -1,0 +1,21 @@
+
+
+We need to be able to:
+
+
+* Render a card from data
+  - render a rectangle with choice of colour
+  - render a striped fill
+  - render a squiggle
+  - render a diamond
+  - render a full card
+* Create a grid indexing system
+  - render a full grid of cards
+* Select/Unselect a card
+* Game logic
+  - check for valid sets
+  - check for invalid sets (give error message)
+* Remove cards and add new cards
+* Media queries and mobile friendly
+* Alternative controls, arrow keys and grid on keyboard
+
