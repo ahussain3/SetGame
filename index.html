@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Play Set Online</title>
+  <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 
@@ -15,9 +16,34 @@
 
 
 
+<script type="text/javascript" charset="utf-8" async defer>
 
+RECT_HEIGHT = 40
+RECT_WIDTH = 160
 
-<script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer>
+var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+svg.setAttribute('width', 500)
+svg.setAttribute('height', 500)
+document.body.appendChild(svg)
+
+function drawRectWithCenter(cx, cy) {
+  var rect = drawRect(cx - RECT_WIDTH / 2, cy - RECT_HEIGHT / 2, RECT_WIDTH, RECT_HEIGHT)
+  return drawRect
+}
+
+function drawRect(x, y, w, h) {
+  var rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  rect.setAttribute('x', x)
+  rect.setAttribute('y', y)
+  rect.setAttribute('rx', _.min([h/2, w/2]))
+  rect.setAttribute('ry', _.min([h/2, w/2]))
+  rect.setAttribute('width', w)
+  rect.setAttribute('height', h)
+  rect.setAttribute('style', 'fill:rgb(0,0,255)')
+  svg.appendChild(rect)
+}
+
+drawRectWithCenter(200, 70)
 
 
 
